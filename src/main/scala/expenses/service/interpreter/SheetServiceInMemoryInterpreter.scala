@@ -1,9 +1,9 @@
-package spendingsmanager.domain.service.interpreter
+package expenses.service.interpreter
 
 import cats.data.Kleisli
-import spendingsmanager.domain.model.{DebtMap, Expense, Sheet}
-import spendingsmanager.domain.repository.SheetRepository
-import spendingsmanager.domain.service.SheetService
+import expenses.model.{DebtMap, Expense, Sheet}
+import expenses.repository.SheetRepository
+import expenses.service.SheetService
 
 trait SheetServiceInMemoryInterpreter extends SheetService[Sheet, DebtMap, Expense] {
   def create(sheetName: String): SheetOp[Sheet] = Kleisli { (sheetRepository: SheetRepository) =>
@@ -27,11 +27,12 @@ trait SheetServiceInMemoryInterpreter extends SheetService[Sheet, DebtMap, Expen
     } yield updatedSheet
   }
 
-  def computeDebtMap(sheetName: String): SheetOp[DebtMap] = Kleisli { (sheetRepository: SheetRepository) =>
+  def computeDebtMap(sheetName: String): SheetOp[DebtMap] = ???
+
+  /*def computeDebtMap(sheetName: String): SheetOp[DebtMap] = Kleisli { (sheetRepository: SheetRepository) =>
     for {
       sheet <- sheetRepository.get(sheetName)
       _ <- sheet.expenses.fold
     } yield updatedSheet
-  }
+  }*/
 }
-object SheetServiceInMemoryInterpreter extends SheetServiceInMemoryInterpreter

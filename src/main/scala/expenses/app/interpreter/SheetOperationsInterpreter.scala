@@ -1,4 +1,4 @@
-package spendingsmanager.domain.app.interpreter
+package expenses.app.interpreter
 
 import cats.effect.IO
 import spendingsmanager.domain.app.SheetOp

@@ -1,6 +1,4 @@
-package spendingsmanager
-package domain
-package model
+package expenses.model
 
 import java.time.LocalDateTime
 

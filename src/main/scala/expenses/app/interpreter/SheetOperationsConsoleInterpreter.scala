@@ -1,6 +1,8 @@
-package spendingsmanager.domain.app.interpreter
+package expenses.app.interpreter
+
 import cats.effect.IO
 import cats.~>
+import expenses.app.SheetOperation
 import spendingsmanager.domain.app.{CloseSheet, CreateSheetOperation, SheetOp, SheetOperation, UpdateSheet}
 
 trait SheetOperationsConsoleInterpreter extends SheetOperationsInterpreter {

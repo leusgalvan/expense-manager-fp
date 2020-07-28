@@ -1,11 +1,9 @@
-package spendingsmanager.domain.repository.interpreter
+package expenses.repository.interpreter
 
-import spendingsmanager.domain.model.Sheet
-import spendingsmanager.domain.repository.SheetRepository
-import cats._
-import cats.implicits._
 import cats.data._
 import cats.effect.IO
+import expenses.model.Sheet
+import expenses.repository.SheetRepository
 
 trait SheetRepositoryInMemoryInterpreter extends SheetRepository {
   var sheetsByName: Map[String, Sheet] = Map.empty[String, Sheet]
@@ -18,4 +16,3 @@ trait SheetRepositoryInMemoryInterpreter extends SheetRepository {
     EitherT(IO(Right{ sheetsByName = sheetsByName + (sheet.name -> sheet) }))
   }
 }
-object SheetRepositoryInMemoryInterpreter extends SheetRepositoryInMemoryInterpreter

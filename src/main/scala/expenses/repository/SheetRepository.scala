@@ -1,9 +1,8 @@
-package spendingsmanager
-package domain
-package repository
+package expenses.repository
 
 import cats.data.EitherT
 import cats.effect.IO
+import expenses.model.Sheet
 import spendingsmanager.domain.model.Sheet
 
 trait SheetRepository {

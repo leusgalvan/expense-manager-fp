@@ -1,4 +1,4 @@
-package spendingsmanager.domain
+package expenses
 
 import cats.free.Free
 
